@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pratiksha Restaurant</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<!-- AOS Animation -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+.navbar{
+    background:#111;
+    padding:15px 0;
+}
+
+.navbar-brand{
+    color:#ffb703 !important;
+    font-size:32px;
+    font-weight:700;
+}
+
+.nav-link{
+    color:white !important;
+    margin-left:15px;
+    transition:0.3s;
+}
+
+.nav-link:hover{
+    color:#ffb703 !important;
+}
+
+/* HERO */
+
+.hero{
+    height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+    url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1400&auto=format&fit=crop');
+
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero h1{
+    font-size:70px;
+    font-weight:700;
+}
+
+.hero span{
+    color:#ffb703;
+}
+
+.hero p{
+    font-size:22px;
+    margin-top:20px;
+}
+
+.btn-custom{
+    background:#ffb703;
+    color:black;
+    padding:14px 35px;
+    border:none;
+    border-radius:40px;
+    margin-top:20px;
+    font-weight:600;
+    transition:0.4s;
+}
+
+.btn-custom:hover{
+    background:white;
+    transform:translateY(-5px);
+}
+
+/* OFFER */
+
+.offer{
+    background:#ffb703;
+    padding:15px;
+    text-align:center;
+    font-weight:600;
+}
+
+/* SECTION TITLE */
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:45px;
+    font-weight:700;
+}
+
+/* LOGIN */
+
+.login-section{
+    padding:100px 0;
+    background:#f8f9fa;
+}
+
+.login-box{
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* FOOD CATEGORY */
+
+.categories{
+    padding:100px 0;
+    background:#111;
+}
+
+.category-box{
+    position:relative;
+}
+
+.food-dropdown{
+    position:absolute;
+    top:70px;
+    left:0;
+    width:220px;
+    background:white;
+    border-radius:15px;
+    box-shadow:0 10px 20px rgba(0,0,0,0.2);
+    opacity:0;
+    visibility:hidden;
+    transition:0.4s;
+    z-index:100;
+}
+
+.food-dropdown ul{
+    list-style:none;
+    padding:20px;
+    margin:0;
+}
+
+.food-dropdown ul li{
+    padding:10px;
+    border-bottom:1px solid #eee;
+    transition:0.3s;
+    font-weight:500;
+}
+
+.food-dropdown ul li:hover{
+    background:#ffb703;
+    padding-left:15px;
+}
+
+.category-box:hover .food-dropdown{
+    opacity:1;
+    visibility:visible;
+    top:80px;
+}
+
+/* MENU */
+
+.menu{
+    padding:100px 0;
+}
+
+.menu-card{
+    border:none;
+    border-radius:20px;
+    overflow:hidden;
+    transition:0.4s;
+    box-shadow:0 10px 20px rgba(0,0,0,0.1);
+}
+
+.menu-card:hover{
+    transform:translateY(-10px);
+}
+
+.menu-card img{
+    height:250px;
+    object-fit:cover;
+}
+
+.price{
+    color:#ff6b00;
+    font-weight:700;
+}
+
+/* SERVICES */
+
+.services{
+    padding:100px 0;
+    background:#111;
+    color:white;
+}
+
+.service-box{
+    background:#1f1f1f;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    transition:0.4s;
+}
+
+.service-box:hover{
+    background:#ffb703;
+    color:black;
+    transform:translateY(-10px);
+}
+
+.service-box i{
+    font-size:50px;
+    margin-bottom:20px;
+}
+
+/* GALLERY */
+
+.gallery{
+    padding:100px 0;
+    background:#f8f9fa;
+}
+
+.gallery img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:20px;
+    transition:0.4s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+/* COUNTER */
+
+.counter{
+    padding:100px 0;
+    background:#ffb703;
+    text-align:center;
+}
+
+.counter h1{
+    font-size:60px;
+    font-weight:700;
+}
+
+/* RESERVATION */
+
+.reservation{
+    padding:100px 0;
+}
+
+.reservation form{
+    background:#f8f9fa;
+    padding:40px;
+    border-radius:20px;
+}
+
+/* TESTIMONIAL */
+
+.testimonial{
+    padding:100px 0;
+    background:#111;
+    color:white;
+}
+
+.review-box{
+    background:#1f1f1f;
+    padding:30px;
+    border-radius:20px;
+}
+
+/* NEWSLETTER */
+
+.newsletter{
+    padding:80px 0;
+    background:#ffb703;
+    text-align:center;
+}
+
+/* CONTACT */
+
+.contact{
+    padding:100px 0;
+}
+
+iframe{
+    width:100%;
+    border-radius:20px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+/* WHATSAPP */
+
+.whatsapp-btn{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:60px;
+    height:60px;
+    background:#25d366;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+    text-decoration:none;
+    z-index:1000;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:42px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+.section-title h2{
+    font-size:35px;
+}
+
+.food-dropdown{
+    width:200px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+
+<div class="container">
+
+<a class="navbar-brand" href="#">Pratiksha</a>
+
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="nav">
+
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="#login">Login</a></li>
+<li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+<li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+<li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+<li class="nav-item"><a class="nav-link" href="#reservation">Reservation</a></li>
+<li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
+<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+
+</ul>
+
+</div>
+
+</div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div data-aos="zoom-in">
+
+<h1>
+Welcome To <span>Pratiksha Restaurant</span>
+</h1>
+
+<p>
+Luxury Dining Experience With Delicious Food
+</p>
+
+<button class="btn-custom">
+Book Table
+</button>
+
+</div>
+
+</section>
+
+<!-- OFFER -->
+
+<div class="offer">
+🔥 50% OFF On Weekend | Buy 1 Get 1 Pizza | Free Delivery Above ₹499
+</div>
+
+<!-- LOGIN -->
+
+<section class="login-section" id="login">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Customer Login</h2>
+</div>
+
+<div class="row justify-content-center">
+
+<div class="col-md-5">
+
+<div class="login-box">
+
+<form id="loginForm">
+
+<div class="mb-3">
+<label>Name</label>
+<input type="text" id="name" class="form-control">
+</div>
+
+<div class="mb-3">
+<label>Password</label>
+<input type="password" id="password" class="form-control">
+</div>
+
+<button class="btn-custom w-100">
+Login
+</button>
+
+</form>
+
+<p class="text-center mt-3" id="message"></p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOD CATEGORY -->
+
+<section class="categories">
+
+<div class="container">
+
+<div class="section-title text-white">
+
+<h2 class="text-white">
+Food Categories
+</h2>
+
+</div>
+
+<div class="d-flex flex-wrap justify-content-center gap-4">
+
+<!-- Indian -->
+
+<div class="category-box">
+
+<button class="btn btn-warning px-4 py-3 fw-bold">
+Indian
+</button>
+
+<div class="food-dropdown">
+
+<ul>
+<li>Butter Chicken</li>
+<li>Chicken Biryani</li>
+<li>Paneer Tikka</li>
+<li>Veg Thali</li>
+<li>Masala Dosa</li>
+</ul>
+
+</div>
+
+</div>
+
+<!-- Chinese -->
+
+<div class="category-box">
+
+<button class="btn btn-danger px-4 py-3 fw-bold">
+Chinese
+</button>
+
+<div class="food-dropdown">
+
+<ul>
+<li>Fried Rice</li>
+<li>Hakka Noodles</li>
+<li>Manchurian</li>
+<li>Spring Rolls</li>
+<li>Schezwan Rice</li>
+</ul>
+
+</div>
+
+</div>
+
+<!-- Italian -->
+
+<div class="category-box">
+
+<button class="btn btn-success px-4 py-3 fw-bold">
+Italian
+</button>
+
+<div class="food-dropdown">
+
+<ul>
+<li>Pizza</li>
+<li>Pasta</li>
+<li>Lasagna</li>
+<li>Garlic Bread</li>
+<li>Cheese Sandwich</li>
+</ul>
+
+</div>
+
+</div>
+
+<!-- Desserts -->
+
+<div class="category-box">
+
+<button class="btn btn-primary px-4 py-3 fw-bold">
+Desserts
+</button>
+
+<div class="food-dropdown">
+
+<ul>
+<li>Chocolate Cake</li>
+<li>Brownie</li>
+<li>Ice Cream</li>
+<li>Cheese Cake</li>
+<li>Gulab Jamun</li>
+</ul>
+
+</div>
+
+</div>
+
+<!-- Drinks -->
+
+<div class="category-box">
+
+<button class="btn btn-light px-4 py-3 fw-bold">
+Drinks
+</button>
+
+<div class="food-dropdown">
+
+<ul>
+<li>Cold Coffee</li>
+<li>Mango Shake</li>
+<li>Mojito</li>
+<li>Fresh Juice</li>
+<li>Soft Drinks</li>
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- MENU -->
+
+<section class="menu" id="menu">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Special Menu</h2>
+</div>
+
+<div class="row g-4">
+
+<!-- PIZZA -->
+
+<div class="col-md-4" data-aos="fade-up">
+
+<div class="card menu-card">
+
+<img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1200&auto=format&fit=crop">
+
+<div class="card-body text-center">
+
+<h4>Italian Pizza</h4>
+
+<p>
+Cheesy pizza with fresh toppings.
+</p>
+
+<h4 class="price">
+₹299
+</h4>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- BURGER -->
+
+<div class="col-md-4" data-aos="fade-up">
+
+<div class="card menu-card">
+
+<img src="https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=1200&auto=format&fit=crop">
+
+<div class="card-body text-center">
+
+<h4>Burger Combo</h4>
+
+<p>
+Crispy burger with fries and sauce.
+</p>
+
+<h4 class="price">
+₹249
+</h4>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- BIRYANI -->
+
+<div class="col-md-4" data-aos="fade-up">
+
+<div class="card menu-card">
+
+<img src="https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?q=80&w=1200&auto=format&fit=crop">
+
+<div class="card-body text-center">
+
+<h4>Chicken Biryani</h4>
+
+<p>
+Aromatic biryani cooked with royal spices.
+</p>
+
+<h4 class="price">
+₹349
+</h4>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+<div class="container">
+
+<div class="section-title text-white">
+<h2 class="text-white">Our Services</h2>
+</div>
+
+<div class="row g-4">
+
+<div class="col-md-3">
+
+<div class="service-box">
+
+<i class="bi bi-truck"></i>
+
+<h4>Fast Delivery</h4>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="service-box">
+
+<i class="bi bi-cup-hot"></i>
+
+<h4>Fresh Food</h4>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="service-box">
+
+<i class="bi bi-calendar-event"></i>
+
+<h4>Party Booking</h4>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="service-box">
+
+<i class="bi bi-people"></i>
+
+<h4>Family Dining</h4>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section class="gallery" id="gallery">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Food Gallery</h2>
+</div>
+
+<div class="row g-4">
+
+<div class="col-md-4">
+<img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1200&auto=format&fit=crop">
+</div>
+
+<div class="col-md-4">
+<img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?q=80&w=1200&auto=format&fit=crop">
+</div>
+
+<div class="col-md-4">
+<img src="https://images.unsplash.com/photo-1628294895950-9805252327bc?q=80&w=1200&auto=format&fit=crop">
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- COUNTER -->
+
+<section class="counter">
+
+<div class="container">
+
+<div class="row">
+
+<div class="col-md-3">
+<h1>10K+</h1>
+<p>Customers</p>
+</div>
+
+<div class="col-md-3">
+<h1>25+</h1>
+<p>Chefs</p>
+</div>
+
+<div class="col-md-3">
+<h1>15+</h1>
+<p>Years Experience</p>
+</div>
+
+<div class="col-md-3">
+<h1>100+</h1>
+<p>Food Items</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- RESERVATION -->
+
+<section class="reservation" id="reservation">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Book Your Table</h2>
+</div>
+
+<div class="row justify-content-center">
+
+<div class="col-md-8">
+
+<form>
+
+<div class="row">
+
+<div class="col-md-6 mb-3">
+<input type="text" class="form-control" placeholder="Your Name">
+</div>
+
+<div class="col-md-6 mb-3">
+<input type="number" class="form-control" placeholder="Phone Number">
+</div>
+
+<div class="col-md-6 mb-3">
+<input type="date" class="form-control">
+</div>
+
+<div class="col-md-6 mb-3">
+<input type="time" class="form-control">
+</div>
+
+<div class="col-md-12 mb-3">
+<input type="number" class="form-control" placeholder="Guests">
+</div>
+
+</div>
+
+<button class="btn-custom">
+Reserve Now
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- REVIEWS -->
+
+<section class="testimonial" id="reviews">
+
+<div class="container">
+
+<div class="section-title text-white">
+<h2 class="text-white">Customer Reviews</h2>
+</div>
+
+<div class="row g-4">
+
+<div class="col-md-4">
+
+<div class="review-box">
+
+⭐⭐⭐⭐⭐
+
+<p class="mt-3">
+Amazing food quality and beautiful atmosphere.
+</p>
+
+<h5>- Rohit</h5>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="review-box">
+
+⭐⭐⭐⭐⭐
+
+<p class="mt-3">
+Excellent service and delicious food.
+</p>
+
+<h5>- Sneha</h5>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="review-box">
+
+⭐⭐⭐⭐⭐
+
+<p class="mt-3">
+One of the best restaurants in Pune.
+</p>
+
+<h5>- Akash</h5>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- NEWSLETTER -->
+
+<section class="newsletter">
+
+<div class="container">
+
+<h2>
+Subscribe Newsletter
+</h2>
+
+<p>
+Get latest offers and updates
+</p>
+
+<div class="row justify-content-center">
+
+<div class="col-md-6">
+
+<div class="input-group">
+
+<input type="email"
+class="form-control"
+placeholder="Enter Email">
+
+<button class="btn btn-dark">
+Subscribe
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Contact Us</h2>
+</div>
+
+<div class="row">
+
+<div class="col-md-6">
+
+<h4>Pratiksha Restaurant</h4>
+
+<p class="mt-4">
+📍 Pune, Maharashtra
+</p>
+
+<p>
+📞 +91 9876543210
+</p>
+
+<p>
+✉ info@pratiksha.com
+</p>
+
+</div>
+
+<div class="col-md-6">
+
+<iframe
+height="300"
+src="https://maps.google.com/maps?q=pune&t=&z=13&ie=UTF8&iwloc=&output=embed">
+</iframe>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<h4>
+Pratiksha Restaurant
+</h4>
+
+<p>
+Open Daily : 10 AM - 11 PM
+</p>
+
+<div class="mt-3">
+
+<i class="bi bi-facebook fs-3 me-3"></i>
+<i class="bi bi-instagram fs-3 me-3"></i>
+<i class="bi bi-youtube fs-3"></i>
+
+</div>
+
+<p class="mt-4">
+© 2026 All Rights Reserved
+</p>
+
+</footer>
+
+<!-- WHATSAPP -->
+
+<a href="#" class="whatsapp-btn">
+
+<i class="bi bi-whatsapp"></i>
+
+</a>
+
+<!-- Bootstrap -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- AOS -->
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+
+AOS.init();
+
+/* LOGIN */
+
+const form = document.getElementById("loginForm");
+
+form.addEventListener("submit", function(e){
+
+e.preventDefault();
+
+let name = document.getElementById("name").value;
+let password = document.getElementById("password").value;
+
+if(name === "" || password === ""){
+
+document.getElementById("message").innerHTML =
+"Please fill all fields";
+
+document.getElementById("message").style.color = "red";
+
+}else{
+
+document.getElementById("message").innerHTML =
+"Welcome " + name + " Login Successful";
+
+document.getElementById("message").style.color = "green";
+
+}
+
+});
+
+</script>
+
+</body>
+</html>
